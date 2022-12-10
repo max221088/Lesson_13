@@ -69,6 +69,7 @@ div {
   display: inline-flex;
   align-items: center;
   cursor: pointer;
+  position: relative;
 }
 .wrapper .container header .user-info .user-name {
   color: #63646dff;
@@ -93,6 +94,36 @@ div {
 .wrapper .container header .user-info .drop-btn:hover {
   border-radius: 50%;
   box-shadow: 0px 0px 10px 5px rgba(130, 167, 241, 0.25) inset;
+}
+.wrapper .container header .user-info .drop-menu {
+  position: absolute;
+  background-color: #f5f8ffff;
+  top: 72px;
+  right: 5px;
+  padding: 10px;
+  border-radius: 10px;
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.5s;
+}
+.wrapper .container header .user-info .drop-menu.active {
+  visibility: visible;
+  opacity: 1;
+}
+.wrapper .container header .user-info .drop-menu li {
+  font-size: 16px;
+  padding: 5px;
+  border-bottom: 1px solid #e0f3f9f0;
+  text-transform: capitalize;
+  color: #63646dff;
+  text-align: right;
+}
+.wrapper .container header .user-info .drop-menu li:hover {
+  text-shadow: #b7b9be 1px 0 1px;
+  background-color: #f5f8ffff;
+}
+.wrapper .container header .user-info .drop-menu li:last-child {
+  border: none;
 }
 .wrapper .container main {
   flex: 1 1 auto;

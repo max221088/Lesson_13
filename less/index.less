@@ -72,6 +72,7 @@ div {
                 display: inline-flex;
                 align-items: center;
                 cursor: pointer;
+                position: relative;
 
                 .user-name{
                     color: #63646dff;
@@ -97,6 +98,38 @@ div {
                     &:hover{
                         border-radius: 50%;
                         box-shadow: 0px 0px 10px 5px rgba(130, 167, 241, 0.25) inset;
+                    }
+                }
+                .drop-menu{
+                    position: absolute;
+                    background-color: #f5f8ffff;
+                    top: 72px;
+                    right: 5px;
+                    padding: 10px;
+                    border-radius: 10px;
+                    visibility: hidden;
+                    opacity: 0;
+                    transition: 0.5s;
+
+                    &.active{
+                        visibility: visible;
+                        opacity: 1;
+                    }
+                    li{
+                        font-size: 16px;
+                        padding: 5px;
+                        border-bottom: 1px solid #e0f3f9f0;
+                        text-transform: capitalize;
+                        color: #63646dff;
+                        text-align: right;
+
+                        &:hover{
+                            text-shadow: rgb(183, 185, 190) 1px 0 1px;
+                            background-color: #f5f8ffff;
+                        }
+                        &:last-child{
+                            border: none;
+                        }
                     }
                 }
             }
