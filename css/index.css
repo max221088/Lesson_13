@@ -1,0 +1,111 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+body {
+  background: linear-gradient(#eaf1eeff, #ecf6fbff) fixed;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul,
+li,
+a,
+p,
+div {
+  margin: 0;
+  padding: 0;
+  font-size: 14px;
+  font-weight: normal;
+  list-style: none;
+  color: #000;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+.wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  padding-top: 50px;
+}
+.wrapper .container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background-color: #fff;
+  border-radius: 10px;
+}
+.wrapper .container header {
+  height: 70px;
+  flex: 0 1 auto;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 2px solid #e8eaf0ff;
+}
+.wrapper .container header .buttn {
+  display: inline-flex;
+  align-items: center;
+}
+.wrapper .container header .buttn li {
+  margin: 0 10px;
+  cursor: pointer;
+  padding: 6px 4px;
+  border: 1px solid #fff;
+  color: #63646dff;
+  font-weight: bold;
+  text-transform: capitalize;
+}
+.wrapper .container header .buttn li:hover {
+  background-color: #f5f8ffff;
+  border: 1px solid #e0f3f9f0;
+  border-radius: 5px;
+  color: #093e92;
+}
+.wrapper .container header .user-info {
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+}
+.wrapper .container header .user-info .user-name {
+  color: #63646dff;
+  text-transform: capitalize;
+}
+.wrapper .container header .user-info .user-name:hover {
+  text-shadow: #b7b9be 1px 0 1px;
+}
+.wrapper .container header .user-info .avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 20%;
+  margin-right: 15px;
+  cursor: pointer;
+}
+.wrapper .container header .user-info .drop-btn {
+  width: 30px;
+  height: auto;
+  margin: 0 10px;
+  cursor: pointer;
+}
+.wrapper .container header .user-info .drop-btn:hover {
+  border-radius: 50%;
+  box-shadow: 0px 0px 10px 5px rgba(130, 167, 241, 0.25) inset;
+}
+.wrapper .container main {
+  flex: 1 1 auto;
+}
+.wrapper .container main .user-panel {
+  flex: 1 1 auto;
+}
+.wrapper .container main .search {
+  flex: 1 1 auto;
+}
+.wrapper .container main .user-table {
+  flex: 1 1 auto;
+}
+.wrapper .container footer {
+  flex: 1 1 auto;
+}
