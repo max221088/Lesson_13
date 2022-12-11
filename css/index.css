@@ -237,7 +237,7 @@ div {
   text-align: center;
   border: none;
 }
-.wrapper .container main .user-table .modal-container {
+.wrapper .container main .modal-container {
   position: fixed;
   top: 0;
   left: 0;
@@ -246,11 +246,11 @@ div {
   opacity: 0;
   visibility: hidden;
 }
-.wrapper .container main .user-table .modal-container.active {
+.wrapper .container main .modal-container.active {
   visibility: visible;
   opacity: 1;
 }
-.wrapper .container main .user-table .modal-container .overlay {
+.wrapper .container main .modal-container .overlay {
   position: fixed;
   z-index: 100;
   top: 0;
@@ -260,7 +260,7 @@ div {
   background-color: #000;
   opacity: 0.5;
 }
-.wrapper .container main .user-table .modal-container .overlay .modal {
+.wrapper .container main .modal-container .overlay .modal {
   position: relative;
   z-index: 101;
   margin: 50px auto;
@@ -274,26 +274,26 @@ div {
   align-items: center;
   padding-top: 30px;
 }
-.wrapper .container main .user-table .modal-container .overlay .modal .modal-tittle {
+.wrapper .container main .modal-container .overlay .modal .modal-tittle {
   text-transform: capitalize;
   font-size: 24px;
   text-align: center;
   color: #063ca0;
 }
-.wrapper .container main .user-table .modal-container .overlay .modal .front-default {
+.wrapper .container main .modal-container .overlay .modal .front-default {
   margin-top: 20px;
   flex: 1 1 auto;
 }
-.wrapper .container main .user-table .modal-container .overlay .modal .front-default img {
+.wrapper .container main .modal-container .overlay .modal .front-default img {
   width: 200px;
   height: auto;
 }
-.wrapper .container main .user-table .modal-container .overlay .modal .foot-bar {
+.wrapper .container main .modal-container .overlay .modal .foot-bar {
   display: inline-flex;
   justify-content: center;
   flex-wrap: nowrap;
 }
-.wrapper .container main .user-table .modal-container .overlay .modal .foot-bar img {
+.wrapper .container main .modal-container .overlay .modal .foot-bar img {
   flex: 1 1 100px;
 }
 .wrapper .container footer {
