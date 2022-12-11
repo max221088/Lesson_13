@@ -168,7 +168,7 @@ div {
 }
 .wrapper .container main .search {
   flex: 0 1 auto;
-  margin: 0 20px;
+  margin: 20px 20px;
   padding: 10px 20px;
   border-radius: 10px;
   background-color: #fafbffff;
@@ -193,22 +193,108 @@ div {
   font-size: 16px;
 }
 .wrapper .container main .user-table {
-  flex: 1 1 auto;
+  flex: 1 1 100%;
+  width: 100%;
   padding: 20px 20px;
+  border-collapse: collapse;
 }
-.wrapper .container main .user-table th {
-  display: flex;
-  align-items: center;
+.wrapper .container main .user-table thead td {
+  font-size: 16px;
+  color: #63646dff;
+  text-align: center;
 }
-.wrapper .container main .user-table th .icon-select-user {
+.wrapper .container main .user-table thead .icon-select-user {
   height: 20px;
   width: 20px;
   margin-right: 15px;
+  margin-bottom: 10px;
 }
-.wrapper .container main .user-table th .select-user {
+.wrapper .container main .user-table thead .select-user {
+  display: block;
   font-size: 12px;
   color: #63646dff;
   font-weight: normal;
+  margin-bottom: 10px;
+}
+.wrapper .container main .user-table tbody .front-pokemon {
+  border-radius: 3px;
+  width: 50px;
+  height: auto;
+  cursor: pointer;
+}
+.wrapper .container main .user-table tbody .poke-name {
+  text-transform: capitalize;
+}
+.wrapper .container main .user-table tbody tr {
+  border: none;
+}
+.wrapper .container main .user-table tbody tr:hover {
+  background-color: #fafbffff;
+}
+.wrapper .container main .user-table tbody td {
+  font-size: 14px;
+  color: #63646dff;
+  text-align: center;
+  border: none;
+}
+.wrapper .container main .user-table .modal-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  opacity: 0;
+  visibility: hidden;
+}
+.wrapper .container main .user-table .modal-container.active {
+  visibility: visible;
+  opacity: 1;
+}
+.wrapper .container main .user-table .modal-container .overlay {
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #000;
+  opacity: 0.5;
+}
+.wrapper .container main .user-table .modal-container .overlay .modal {
+  position: relative;
+  z-index: 101;
+  margin: 50px auto;
+  width: 600px;
+  height: 400px;
+  border: 1px solid #000000;
+  border-radius: 10px;
+  background-color: #ece5e5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 30px;
+}
+.wrapper .container main .user-table .modal-container .overlay .modal .modal-tittle {
+  text-transform: capitalize;
+  font-size: 24px;
+  text-align: center;
+  color: #063ca0;
+}
+.wrapper .container main .user-table .modal-container .overlay .modal .front-default {
+  margin-top: 20px;
+  flex: 1 1 auto;
+}
+.wrapper .container main .user-table .modal-container .overlay .modal .front-default img {
+  width: 200px;
+  height: auto;
+}
+.wrapper .container main .user-table .modal-container .overlay .modal .foot-bar {
+  display: inline-flex;
+  justify-content: center;
+  flex-wrap: nowrap;
+}
+.wrapper .container main .user-table .modal-container .overlay .modal .foot-bar img {
+  flex: 1 1 100px;
 }
 .wrapper .container footer {
   flex: 0 1 auto;
