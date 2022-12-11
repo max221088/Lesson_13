@@ -100,7 +100,7 @@ function openModal(data) {
 }
 
 $table.addEventListener("click", function (event) {
-	console.log(event);
+	//console.log(event);
 	let query = event.target.dataset.name;
 	if (query) {
 		fetch("https://pokeapi.co/api/v2/pokemon/")
@@ -117,13 +117,13 @@ $table.addEventListener("click", function (event) {
 					}
 				});
 				url = url[0].url;
-				console.log(url);
+				//console.log(url);
 				fetch(url)
 					.then(function (response) {
 						return response.json();
 					})
 					.then(function (data) {
-						console.log(data);
+						//console.log(data);
 						let modal =
 							"<h3 class =modal-tittle>" +
 							data.name +
@@ -148,7 +148,7 @@ $table.addEventListener("click", function (event) {
 							">" +
 							"</div>";
 						document.querySelector(".modal").innerHTML = modal;
-						console.log(data);
+						//console.log(data);
 					});
 			});
 		openModal(open);
