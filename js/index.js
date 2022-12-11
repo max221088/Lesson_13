@@ -91,6 +91,7 @@ fetch("https://pokeapi.co/api/v2/pokemon/")
 		contentGenerator(pokemon);
 	});
 
+//console.log(pokemon);
 function openModal(data) {
 	if (data == open) {
 		$modal.classList.add("active");
