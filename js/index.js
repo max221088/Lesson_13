@@ -12,40 +12,41 @@ $dropBtn.addEventListener("click", function () {
 	$dropMenu.classList.toggle("active");
 });
 
-function htmlgenerator(data) {
-	//console.log(data);
-	if (data) {
-		tableHtml +=
-			"<tr>" +
-			"<td><input type =checkbox class= checkbox></td>" +
-			"<td> <img data-name=" +
-			data.name +
-			" " +
-			"class=front-pokemon src=" +
-			data.sprites.front_default +
-			"></td>" +
-			"<td>" +
-			data.id +
-			"</td>" +
-			"<td class=poke-name>" +
-			data.name +
-			"</td>" +
-			"<td>" +
-			data.base_experience +
-			"</td>" +
-			"<td>" +
-			data.abilities[0].ability.name +
-			"</td>" +
-			"<td>" +
-			data.types[0].type.name +
-			"</td>" +
-			"<td>" +
-			data.weight +
-			"</td>" +
-			"<td>" +
-			data.height +
-			"</td>" +
-			"</tr>";
+function htmlgenerator(list) {
+	if (list.length != 0) {
+		list.forEach(function (li) {
+			tableHtml +=
+				"<tr>" +
+				"<td><input type =checkbox class= checkbox></td>" +
+				"<td> <img data-name=" +
+				li.name +
+				" " +
+				"class=front-pokemon src=" +
+				li.sprites.front_default +
+				"></td>" +
+				"<td>" +
+				li.id +
+				"</td>" +
+				"<td class=poke-name>" +
+				li.name +
+				"</td>" +
+				"<td>" +
+				li.base_experience +
+				"</td>" +
+				"<td>" +
+				li.abilities[0].ability.name +
+				"</td>" +
+				"<td>" +
+				li.types[0].type.name +
+				"</td>" +
+				"<td>" +
+				li.weight +
+				"</td>" +
+				"<td>" +
+				li.height +
+				"</td>" +
+				"</tr>";
+		});
 	} else {
 		tableHtml =
 			"<tr><td colspan=9 style=font-size:22px >Not Fount</td></tr>";
@@ -54,31 +55,31 @@ function htmlgenerator(data) {
 }
 
 function contentGenerator(list) {
-	if (list.length != 0) {
-		list.forEach(function (el) {
-			fetch(el.url)
-				.then(function (response) {
-					return response.json();
-				})
-				.then(function (data) {
-					htmlgenerator(data);
-				});
-		});
-	} else {
-		htmlgenerator(false);
-	}
+	list.forEach(function (el) {
+		fetch(el.url)
+			.then(function (response) {
+				return response.json();
+			})
+			.then(function (data) {
+				url.push(data);
+				if (url.length == list.length) {
+					htmlgenerator(url);
+					//console.log(url);
+				}
+			});
+	});
 }
 
 $filt.addEventListener("input", function () {
 	let query = this.value.toLowerCase();
-	let filtPokemon = pokemon.filter(function (el) {
+	filtPokemon = url.filter(function (el) {
 		if (el.name.toLowerCase().indexOf(query) != -1) {
 			return true;
 		} else {
 			return false;
 		}
 	});
-	contentGenerator(filtPokemon);
+	htmlgenerator(filtPokemon);
 	tableHtml = [];
 });
 
@@ -89,9 +90,9 @@ fetch("https://pokeapi.co/api/v2/pokemon/")
 	.then(function (data) {
 		pokemon = data.results;
 		contentGenerator(pokemon);
+		//console.log(pokemon);
 	});
 
-//console.log(pokemon);
 function openModal(data) {
 	if (data == open) {
 		$modal.classList.add("active");
