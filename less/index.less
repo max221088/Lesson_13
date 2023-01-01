@@ -305,6 +305,49 @@ div {
                         flex-direction: column;
                         align-items: center;
                         padding-top: 30px;
+
+                        @keyframes load-spin{
+                            0%{
+                                height: 50px;
+                            }
+                            50% {
+                                height: 180px;
+                            }
+                            100% {
+                                height: 50px;
+                            }
+                        }
+                        .spinner{
+                            margin: 100px;
+                            width: 100%px;
+                            height: 200px;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            padding: 20px;
+                            .element{
+                                animation-name: load-spin;
+                                animation-duration: 2s;
+                                animation-iteration-count:infinite;
+                                width: 20px;
+                                height: 50px;
+                                margin-right: 20px;
+                                border-radius: 10px ;
+                                background-color: rgb(98, 228, 86);
+                            }
+                            .element:nth-child(2){
+                                animation-delay:250ms;
+                                }
+                            .element:nth-child(3){
+                                animation-delay:500ms;
+                                }
+                            .element:nth-child(4){
+                                animation-delay:750ms;
+                                }
+                            .element:nth-child(5){
+                                animation-delay:1000ms;
+                                }
+                        }
                         
                         .modal-tittle{
                             text-transform: capitalize;
